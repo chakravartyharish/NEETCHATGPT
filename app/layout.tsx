@@ -1,4 +1,3 @@
-
 import '../styles/globals.css'
 
 export const metadata = {
@@ -15,10 +14,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <main className="min-h-screen">{children}</main>
-        <script dangerouslySetInnerHTML={{__html:`
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
           if ('serviceWorker' in navigator && '${process.env.NEXT_PUBLIC_ENABLE_PWA}'==='true') {
             window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
-          }`}} />
+          }`,
+          }}
+        />
       </body>
     </html>
   )

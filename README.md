@@ -1,7 +1,7 @@
-
 # NEET Prep AI — Phase 1 Starter
 
 This is a production-ready starter for Phase 1:
+
 - Next.js App Router on Vercel
 - Supabase (Auth + Postgres + Storage + Realtime + **pgvector**)
 - Vercel AI SDK for AI Tutor

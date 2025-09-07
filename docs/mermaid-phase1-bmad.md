@@ -3,6 +3,7 @@
 ## Blueprint → Model → Architect → Develop
 
 ### Blueprint (Problem, Personas, Features)
+
 ```mermaid
 flowchart TD
   P[Problem: AI tutoring for NEET] --> G[Goal: Scalable PWA with offline + AI tutor]
@@ -15,6 +16,7 @@ flowchart TD
 ```
 
 ### Model (Blocks, Data Flow)
+
 ```mermaid
 flowchart LR
   AuthBlock[Auth Block] --> DB[(Supabase Postgres + RLS)]
@@ -27,6 +29,7 @@ flowchart LR
 ```
 
 ### Architect (System Design)
+
 ```mermaid
 flowchart TD
   User --> CDN --> VercelEdge --> Next[Next.js App Router]
@@ -37,6 +40,7 @@ flowchart TD
 ```
 
 ### Develop (Action Steps)
+
 ```mermaid
 flowchart TD
   Start --> Repo[Init Monorepo + CI/CD]

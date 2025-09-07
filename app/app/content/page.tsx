@@ -1,4 +1,3 @@
-
 import { supabaseServer } from '@/lib/supabase/server'
 
 export default async function ContentPage() {
@@ -9,7 +8,11 @@ export default async function ContentPage() {
       <h1 className="text-xl font-semibold">Lessons</h1>
       {error && <p className="text-red-600">{error.message}</p>}
       <ul className="mt-4 space-y-2">
-        {data?.map((l:any)=>(<li key={l.id} className="border p-3 rounded">{l.title} <span className="text-xs opacity-70">({l.type})</span></li>))}
+        {data?.map((l: any) => (
+          <li key={l.id} className="rounded border p-3">
+            {l.title} <span className="text-xs opacity-70">({l.type})</span>
+          </li>
+        ))}
       </ul>
     </div>
   )

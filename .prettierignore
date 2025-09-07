@@ -1,0 +1,16 @@
+node_modules
+.next
+.vercel
+.env
+.env.local
+.env.production.local
+.env.test.local
+dist
+build
+coverage
+*.log
+.DS_Store
+.vscode/settings.json
+.idea
+.bmad-core/agent-configs
+public/tw.css

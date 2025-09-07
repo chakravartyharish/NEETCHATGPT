@@ -1,4 +1,3 @@
-
 import fs from 'node:fs'
 import path from 'node:path'
 import { createClient } from '@supabase/supabase-js'
@@ -23,14 +22,18 @@ function chunkText(text: string, size = 800, overlap = 100) {
 }
 
 async function main() {
-  if (!fs.existsSync(CONTENT_DIR)) return console.log('No content/ dir found')
+  if (!fs.existsSync(CONTENT_DIR)) return console.log('No content/ dir found') // eslint-disable-line no-console
   const files = fs.readdirSync(CONTENT_DIR)
   for (const file of files) {
     const full = path.join(CONTENT_DIR, file)
     const text = fs.readFileSync(full, 'utf-8')
     const topic = path.basename(file, path.extname(file))
     const lang = 'en'
-    const { data: doc, error } = await sb.from('documents').insert({ text, topic, lang }).select().single()
+    const { data: doc, error } = await sb
+      .from('documents')
+      .insert({ text, topic, lang })
+      .select()
+      .single()
     if (error) throw error
     const chunks = chunkText(text)
     for (let idx = 0; idx < chunks.length; idx++) {
@@ -41,12 +44,15 @@ async function main() {
         document_id: doc.id,
         embedding: vector as any,
         chunk_id: `${doc.id}-${idx}`,
-        chunk_index: idx
+        chunk_index: idx,
       })
-      console.log('Inserted chunk', idx, 'for', file)
+      console.log('Inserted chunk', idx, 'for', file) // eslint-disable-line no-console
     }
   }
-  console.log('Done.')
+  console.log('Done.') // eslint-disable-line no-console
 }
 
-main().catch((e)=>{ console.error(e); process.exit(1) })
+main().catch(e => {
+  console.error(e) // eslint-disable-line no-console
+  process.exit(1)
+})

@@ -37,11 +37,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# IDEs and editors
-.vscode
+# IDEs and editors (except BMAD configurations)
 .idea
 *.swp
 *.swo
+
+# Keep BMAD VS Code settings but ignore user-specific ones
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-workspace
 
 # OS generated files
 .DS_Store

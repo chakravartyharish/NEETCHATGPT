@@ -1,6 +1,7 @@
 # Phase 1 Planning — NEET Prep AI Platform
 
 ## Milestones
+
 1. **M1: Foundation**
    - Repo setup, Vercel + Supabase projects
    - CI/CD pipelines with migrations & seed
@@ -21,14 +22,17 @@
    - Consent & DSR endpoints, retention jobs
 
 ## Dependencies
+
 - Vercel & Supabase accounts
 - Drizzle ORM for migrations
 - Embeddings model (OpenAI or local)
 
 ## Risks
+
 - Latency of AI calls → mitigate with SSE streaming + caching
 - Supabase limits (pgvector scale) → plan for sharding if needed
 - Offline sync conflicts → design idempotent API endpoints
 
 ## Timeline (solo dev, est.)
+
 - 8–10 weeks (2 per milestone incl. buffer)

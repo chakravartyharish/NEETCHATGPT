@@ -1,4 +1,3 @@
-
 'use client'
 import { useState } from 'react'
 
@@ -7,7 +6,11 @@ export default function TutorPage() {
   const [a, setA] = useState<string>('')
 
   async function ask() {
-    const r = await fetch('/api/ai/tutor', { method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ question: q }) })
+    const r = await fetch('/api/ai/tutor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q }),
+    })
     const reader = r.body?.getReader()
     const decoder = new TextDecoder()
     let acc = ''
@@ -20,10 +23,17 @@ export default function TutorPage() {
   }
 
   return (
-    <div className="p-8 space-y-3">
-      <textarea className="w-full border p-2 rounded" rows={3} value={q} onChange={e=>setQ(e.target.value)} />
-      <button onClick={ask} className="px-4 py-2 bg-sky-600 text-white rounded">Ask</button>
-      <pre className="whitespace-pre-wrap mt-4 p-3 border rounded">{a}</pre>
+    <div className="space-y-3 p-8">
+      <textarea
+        className="w-full rounded border p-2"
+        rows={3}
+        value={q}
+        onChange={e => setQ(e.target.value)}
+      />
+      <button onClick={ask} className="rounded bg-sky-600 px-4 py-2 text-white">
+        Ask
+      </button>
+      <pre className="mt-4 whitespace-pre-wrap rounded border p-3">{a}</pre>
     </div>
   )
 }

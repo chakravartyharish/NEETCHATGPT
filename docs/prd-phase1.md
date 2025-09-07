@@ -1,6 +1,7 @@
 # Phase 1 PRD — NEET Prep AI Platform
 
 ## Scope (Phase 1 Only)
+
 - **Backend & Infra Foundations**
   - Supabase (Postgres + Auth + Storage + Realtime + Edge Functions + pgvector)
   - Vercel (Next.js App Router + Vercel AI SDK + Edge Middleware)
@@ -22,6 +23,7 @@
   - CI/CD pipelines with preview/prod
 
 ## Out of Scope (Future Phases)
+
 - Live classes (WebRTC SFU)
 - Dashboards (educator, institution, moderator)
 - Notifications fanout
@@ -29,6 +31,7 @@
 - Advanced moderation/feedback loops
 
 ## Success Criteria
+
 - Deployed app responds to auth/login + content APIs
 - Quizzes functional with scoring + persistence
 - AI tutor returns grounded answers from embeddings
